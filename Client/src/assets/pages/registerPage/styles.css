@@ -1,0 +1,305 @@
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+
+.register-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Left side - Information */
+.register-left {
+    flex: 1;
+    padding: 2.5rem;
+    border-right: 1px solid #eee;
+}
+
+.register-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    stroke-width: 1.5;
+}
+
+.register-logo h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.register-left h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.register-description {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.register-benefits h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.register-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.register-benefits li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.benefit-icon {
+    color: var(--primary-color);
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.register-image {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.register-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Right side - Form */
+.register-right {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-form-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.register-form-container > p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-checkbox input {
+    margin-top: 0.25rem;
+}
+
+.form-checkbox label {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.terms-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+.register-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.register-divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.register-divider::before,
+.register-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.register-divider::before {
+    left: 0;
+}
+
+.register-divider::after {
+    right: 0;
+}
+
+.register-divider span {
+    background-color: white;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.social-register {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-button:hover {
+    background-color: #f5f5f5;
+}
+
+.google {
+    color: #DB4437;
+}
+
+.facebook {
+    color: #4267B2;
+}
+
+.login-link {
+    text-align: center;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .register-container {
+        flex-direction: column;
+        max-width: 600px;
+    }
+    
+    .register-left {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 2rem;
+    }
+    
+    .register-right {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    
+    .register-left, .register-right {
+        padding: 1.5rem;
+    }
+    
+    .social-register {
+        flex-direction: column;
+    }
+}

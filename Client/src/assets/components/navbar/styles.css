@@ -1,0 +1,287 @@
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+}
+
+.navbar-logo {
+    flex: 0 0 auto;
+}
+
+.navbar-logo a {
+    text-decoration: none;
+}
+
+/* Updating color references to use CSS variables */
+
+.navbar-logo h1 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin: 0;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo h1:hover {
+    color: var(--primary-hover);
+}
+
+.navbar-menu {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.navbar-links li {
+    position: relative;
+}
+
+.navbar-links li a, 
+.navbar-links li span {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover,
+.navbar-links li span:hover {
+    color: var(--primary-color);
+}
+
+.navbar-dropdown {
+    position: relative;
+}
+
+.navbar-dropdown svg {
+    margin-left: 5px;
+    font-size: 0.6rem;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 0.8rem 0;
+    z-index: 1;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+    color: var(--primary-color);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.icon-button:hover {
+    color: var(--primary-color);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adding hamburger menu icon and mobile navigation */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+    .navbar-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+    
+    .navbar-container {
+        flex-wrap: nowrap;
+        position: relative;
+    }
+    
+    .navbar-logo {
+        flex: 1;
+    }
+    
+    .navbar-actions {
+        position: absolute;
+        left: 70%;
+        transform: translateX(-50%);
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        padding: 80px 20px 20px;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .navbar-menu.active {
+        right: 0;
+    }
+    
+    .navbar-links {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: flex-start;
+    }
+    
+    .navbar-dropdown {
+        width: 100%;
+    }
+    
+    .navbar-dropdown span {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .dropdown-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: max-height 0.3s ease;
+        width: 100%;
+    }
+    
+    .navbar-dropdown.active .dropdown-content {
+        max-height: 500px;
+        padding: 0.5rem 0;
+    }
+    
+    .dropdown-content a {
+        padding: 0.5rem 1rem;
+    }
+    
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+}

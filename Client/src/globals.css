@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('./assets/fonts/Geist.ttf');
+}
+
+:root {
+  --primary-color: #c8a887;
+  --primary-hover: #b39275;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Geist';
+  color: black;
+}   
+
+/* Styling for thin line icons */
+.icon {
+  stroke-width: 1.5;
+  stroke: currentColor;
+  fill: none;
+  width: 1em;
+  height: 1em;
+}
+
+/* Extra thin variant */
+.icon-thin {
+  stroke-width: 0.8;
+}
+main {
+  min-height: 100vh;
+  margin-top: 2rem;
+}
